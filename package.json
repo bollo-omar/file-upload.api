@@ -1,0 +1,31 @@
+{
+  "name": "file-upload.api",
+  "version": "1.0.0",
+  "description": "API for an image upload application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index",
+    "start": "node ./index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bollo-omar/file-upload.api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bollo-omar/file-upload.api/issues"
+  },
+  "homepage": "https://github.com/bollo-omar/file-upload.api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "multer": "^1.4.4"
+  }
+}
