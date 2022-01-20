@@ -3,7 +3,7 @@ const createImage = require('../service');
 
 const multerConfig = multer.diskStorage({
     destination : (req,file,callback)=>{
-        callback(null,'public/photos/')
+        callback(null,'src/photos/')
     }
     ,filename : (req, file, callback)=>{
         const ext = file.mimetype.split('/')[1];
