@@ -23,18 +23,19 @@ const uploader = multer({
     storage : multerConfig,
     fileFilter : isImage
 })
-exports.uploadImage = uploader.single('photo');
 
-exports.upload = (req, res)=>{
+module.exports = {
+    uploadImage: uploader.single('photo'),
+    upload : (req, res)=>{
 
-    const file = req.file
-    createImage(file).then((value) => {
-        res.json({message: "image uploaded successfully",image:value._doc.fileName,"mime-data":{...value._doc}
-    });
-        
-    }).catch((err) => {
-        console.error(err);
-    })
-
-    
+        const file = req.file
+        createImage(file).then((value) => {
+            
+            res.status(200).json({message: "image uploaded successfully",image:value._doc.fileName,mimeData:value._doc
+        });
+            
+        }).catch((err) => {
+            console.error(err);
+        })    
+    }
 }

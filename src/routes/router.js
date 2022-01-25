@@ -1,5 +1,8 @@
 const express = require('express');
-const { upload, uploadImage } = require('../controller');
+const controller = require('../controller');
+const {upload, uploadImage} = controller;
+const path = require('path');
+const {getimage} = require('../controller/imageurl');
 
 const router = express.Router();
 
@@ -15,5 +18,8 @@ router.get('/application',(req,res,next) => {
         })
 });
 router.post('/upload',uploadImage, upload);
+router.post('/fetch-url',getimage);
+
 
 module.exports = router;
+
